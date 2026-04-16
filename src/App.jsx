@@ -1,18 +1,21 @@
-import { Route, Routes } from "react-router-dom"
-import Navbar from "./components/Navbar"
-import AboutPage from "./pages/AboutPage"
-import Courses from "./pages/Courses"
-import HomePage from "./pages/HomePage"
+
+import { Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import Courses from './pages/Courses'
+import About from './pages/About'
+import NotFound from './pages/NotFound'
+import Navbar from './components/Navbar'
 
 const App = () => {
   return (
     <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />}/>
-        <Route path="/course" element={<Courses />}/>
-        <Route path="/about" element={<AboutPage />}/>
-      </Routes>
+    <Navbar />
+    <Routes>
+      <Route path='/' element={<Home />}/>
+      <Route path='/courses' element={<Courses />}/>
+      <Route path='/about' element={<About />}/>
+      <Route path='*' element={<NotFound />}/>
+    </Routes>
     </>
   )
 }
