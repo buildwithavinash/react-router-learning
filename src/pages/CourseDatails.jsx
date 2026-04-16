@@ -1,9 +1,10 @@
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { courses } from "../data/data";
 
 const CourseDatails = () => {
 
     const { id } = useParams();
+    const navigate = useNavigate();
 
     const course = courses.find(c => c.id === id);
     
@@ -13,6 +14,7 @@ const CourseDatails = () => {
 
   return (
     <>
+    <button onClick={()=> navigate(-1)}>Back</button>
     <h1>{course.title}</h1>
     <p>{course.description}</p>
     </>
