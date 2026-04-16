@@ -13,8 +13,13 @@ const App = () => {
     <Navbar />
     <Routes>
       <Route path='/' element={<Home />}/>
-      <Route path='/courses' element={<Courses />}/>
-      <Route path='/courses/:id' element={<CourseDatails />}/>
+
+      <Route path='/courses' element={<Courses />}>
+      <Route index element={<p>Select a course</p>}/>
+      <Route path=':id' element={<CourseDatails />}/>
+      </Route>
+
+
       <Route path='/about' element={<About />}/>
       <Route path='*' element={<NotFound />}/>
     </Routes>
