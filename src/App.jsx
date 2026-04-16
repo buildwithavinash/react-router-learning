@@ -6,6 +6,9 @@ import About from './pages/About'
 import NotFound from './pages/NotFound'
 import Navbar from './components/Navbar'
 import CourseDatails from './pages/CourseDatails'
+import Login from './pages/Login'
+import ProtectedRoute from './components/ProtectedRoute'
+import Dashboard from './pages/Dashboard'
 
 const App = () => {
   return (
@@ -19,7 +22,12 @@ const App = () => {
       <Route path=':id' element={<CourseDatails />}/>
       </Route>
 
-
+      <Route path='/login' element={<Login />}/>
+      <Route path='/dashboard' element={
+        <ProtectedRoute>
+          <Dashboard />
+        </ProtectedRoute>
+      } />
       <Route path='/about' element={<About />}/>
       <Route path='*' element={<NotFound />}/>
     </Routes>
